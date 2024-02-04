@@ -1,8 +1,8 @@
-import { POST_ELECTION_SUCCESS } from "../Election/ElectionAction";
-import { GET_USER_ERROR, GET_USER_PROGRESS, GET_USER_SUCCESS, POST_USER_ERROR, POST_USER_PROGRESS, POST_USER_SUCCESS } from "./userAction";
+
+import { DELETE_USER_ERROR, DELETE_USER_PROGRESS, DELETE_USER_SUCCESS, GET_USER_ERROR, GET_USER_PROGRESS, GET_USER_SUCCESS, POST_USER_ERROR, POST_USER_PROGRESS, POST_USER_SUCCESS } from "./userAction";
 
 const initialState = {
-    user: [],
+    data: [],
     isLoading: false,
     isError: null,
 }
@@ -34,30 +34,55 @@ const userReducer = (state = {...initialState}, action) => {
             }
         }
 
-        // case POST_USER_PROGRESS:{
-        //     return{
-        //         ...state,
-        //         isLoading: true,
-        //         isError: null,
-        //     }
-        // }
+        case POST_USER_PROGRESS:{
+            return{
+                ...state,
+                isLoading: true,
+                isError: null,
+            }
+        }
 
-        // case POST_USER_SUCCESS:{
-        //     return{
-        //         ...state,
-        //         isLoading: false,
-        //         user: state.user.concat(action.data),
-        //         isError: null,
-        //     }
-        // }
+        case POST_USER_SUCCESS:{
+            return{
+                ...state,
+                isLoading: false,
+                user: state.data.concat(action.data.Data),
+                isError: null,
+            }
+        }
 
-        // case POST_USER_ERROR:{
-        //     return{
-        //         ...state,
-        //         isLoading: false,
-        //         isError: action.data,
-        //     }
-        // }
+        case POST_USER_ERROR:{
+            return{
+                ...state,
+                isLoading: false,
+                isError: action.payload,
+            }
+        }
+
+        case DELETE_USER_PROGRESS: {
+            return{
+                ...state,
+                isLoading: true,
+                isError: null,
+            }
+        }
+
+        case DELETE_USER_SUCCESS:{
+            return{
+                ...state,
+                isLoading: false,
+                data: state.data.filter((val) => val._id !== action.data ),
+                isError: null,
+            }
+        }
+
+        case DELETE_USER_ERROR: {
+            return{
+                ...state,
+                isLoading: false,
+                isError: action.data
+            }
+        }
 
         default:
             return state;

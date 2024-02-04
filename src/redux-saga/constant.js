@@ -6,17 +6,17 @@ export const LOGIN_URL = "/login";
 //  ============== ELECTION ROUTE ===============
 export const GET_ELECTION_URL = "/elelist"
 export const POST_ELECTION_URL = "/ele"
-export const UPDATE_ELECTION_URL = "/eleup/:_Id"  //+ID
-export const DELETE_ELECTION_URL = "/eledel/:_Id"  //+id 
+export const UPDATE_ELECTION_URL = "/eleup/"  //+ID
+export const DELETE_ELECTION_URL = "/eledel/"  //+id 
 
 // ============== PARTY ROUTE ===============
 export const GET_PARTY_URL = "/pList"
 export const POST_PARTY_URL = "/party"
-export const DELETE_PARTY_URL = "/pdel/:_Id" //+_id
-export const UPDATE_PARTY_URL = "/pup/:_Id" //+_id
+export const DELETE_PARTY_URL = "/pdel/" //+_id
+export const UPDATE_PARTY_URL = "/pup/" //+_id
 
 // ============= USER ROUTE ================
 export const GET_USER_URL = "/authlist"
 export const POST_USER_URL = "/auth"
-export const DELETE_USER_URL = "/authdel/:_Id" //+_id
-export const UPDATE_USER_URL = "/authup/:_Id" //+_id
+export const DELETE_USER_URL = "/authdel/" //+_id
+export const UPDATE_USER_URL = "/authup/" //+_id

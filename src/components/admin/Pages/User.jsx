@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { GET_USER_PROGRESS } from '../../../redux-saga/admin/User/userAction';
+import { DELETE_USER_PROGRESS, GET_USER_PROGRESS } from '../../../redux-saga/admin/User/userAction';
 import UserFormModel from '../../common/UserFormModel';
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import Swal from 'sweetalert2';
 
 const User = () => {
 
@@ -14,6 +17,29 @@ const User = () => {
     }, [])
 
     console.log(user, 'user dattaa');
+
+    const handleDelete = (val, _id) => {
+        // console.log(val, 'val');
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be delete this user!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+
+        dispatch({ type: DELETE_USER_PROGRESS, payload: val })
+    }
 
     return (
         <>
@@ -59,6 +85,11 @@ const User = () => {
                                         </p>
                                     </h3>
                                     <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{val.Address}</p>
+
+                                </div>
+                                <div className='pt-4'>
+                                    <button className='pl-2'><FaEdit /></button>
+                                    <button className='pl-2' onClick={() => handleDelete(val, val._id)}><RiDeleteBin6Fill /></button>
                                 </div>
 
                             </article>

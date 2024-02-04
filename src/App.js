@@ -2,7 +2,6 @@ import Cookies from 'js-cookie';
 import './App.css';
 import Dashboard from './components/admin/Pages/Dashboard';
 import Login from './components/auth/Login';
-import TryLogin from './components/auth/TryLogin';
 import Layout from './components/common/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Election from './components/admin/Pages/Election';

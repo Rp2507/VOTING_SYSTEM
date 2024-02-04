@@ -26,7 +26,7 @@ const Login = () => {
                 Cookies.set("_id", res.data.data._id)
                 Cookies.set("Profile", res.data.data.Profile)
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
                     title: "Your work has been saved",
                     showConfirmButton: false,

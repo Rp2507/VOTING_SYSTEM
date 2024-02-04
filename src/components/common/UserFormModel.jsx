@@ -4,7 +4,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { useDispatch, useSelector } from 'react-redux';
 import { POST_USER_PROGRESS } from '../../redux-saga/admin/User/userAction';
-
+import Swal from 'sweetalert2';
 
 const UserFormModel = () => {
 
@@ -23,25 +23,42 @@ const UserFormModel = () => {
 
 
     const handleSubmit = () => {
-        const data = new FormData();
-        data.append("Name", name.current.value);
-        data.append("DOB", dob.current.value);
-        data.append("Email", email.current.value);
-        data.append("Phone", phoneNo.current.value);
-        data.append("Address", address.current.value);
-        data.append("Sex", sex.current.value);
-        data.append("CardNumber", cardNo.current.value);
-        data.append("Role", role.current.value);
-        data.append("Profile", profile.current.files[0]);
+        const formData = new FormData();
+        formData.append("Name", name.current.value);
+        formData.append("DOB", dob.current.value);
+        formData.append("Email", email.current.value);
+        formData.append("Phone", phoneNo.current.value);
+        formData.append("Address", address.current.value);
+        formData.append("Sex", sex.current.value);
+        formData.append("CardNumber", cardNo.current.value);
+        formData.append("Role", role.current.value);
+        formData.append("Profile", profile.current.files[0]);
 
         dispatch({
             type: POST_USER_PROGRESS,
-            payload: data,
+            payload: formData,
             headers:{
                 "Content-Type": "multipart/form-data",
             }
         })
+
+        Swal.fire({
+            title: "Do you want to add the election?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "ADD",
+            denyButtonText: `Don't Add`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire("Saved!", "", "success");
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
     }
+
+    console.log(user , 'user datttaaa');
 
 
     return (
@@ -188,7 +205,7 @@ const UserFormModel = () => {
 
                                             <div className="sm:col-span-2">
                                                 <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                                    Enter Your Password
+                                                    Enter Your Role
                                                 </label>
                                                 <div className="mt-2">
                                                     <input
@@ -253,7 +270,7 @@ const UserFormModel = () => {
                                 </div>
 
                                 <div className="mt-6 flex items-center justify-end gap-x-6">
-                                    <button type="button" className="text-sm font-semibold leading-6 text-gray-900 ">
+                                <button type="button" className="text-sm font-semibold leading-6 text-gray-900 " data-bs-dismiss="modal">
                                         Cancel
                                     </button>
                                     <button
