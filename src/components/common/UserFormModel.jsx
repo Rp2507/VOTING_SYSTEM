@@ -17,6 +17,7 @@ const UserFormModel = () => {
     const cardNo = useRef();
     const role = useRef();
     const profile = useRef();
+    const password = useRef();
 
     const user = useSelector((state) => state.userReducer)
     const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const UserFormModel = () => {
         formData.append("CardNumber", cardNo.current.value);
         formData.append("Role", role.current.value);
         formData.append("Profile", profile.current.files[0]);
+        formData.append("Password", password.current.value)
 
         dispatch({
             type: POST_USER_PROGRESS,
@@ -202,6 +204,22 @@ const UserFormModel = () => {
                                                     />
                                                 </div>
                                             </div> 
+
+                                        <div className="sm:col-span-2">
+                                            <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
+                                                Enter Your Password
+                                            </label>
+                                            <div className="mt-2">
+                                                <input
+                                                    type="text"
+                                                    name="password"
+                                                    id="password"
+                                                    autoComplete="address-level1"
+                                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    ref={password}
+                                                />
+                                            </div>
+                                        </div> 
 
                                             <div className="sm:col-span-2">
                                                 <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">

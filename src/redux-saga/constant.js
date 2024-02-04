@@ -1,3 +1,4 @@
+// ============= BASE API ROUTE ==============
 export const BASE_URL = "http://52.65.47.180:4000/v1";
 
 // ============== LOGIN ROUTE ================
@@ -20,3 +21,8 @@ export const GET_USER_URL = "/authlist"
 export const POST_USER_URL = "/auth"
 export const DELETE_USER_URL = "/authdel/" //+_id
 export const UPDATE_USER_URL = "/authup/" //+_id
+
+// ============ PARTY CONNECTION ROUTE ================
+export const GET_PARTY_CONNECTION_URL = "/plistall"
+export const POST_PARTY_CONNECTION_URL = "/plist"
+export const DELETE_PARTY_CONNECTION_URL = "/plistdel/" //+_id

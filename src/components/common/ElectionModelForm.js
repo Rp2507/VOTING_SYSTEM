@@ -6,8 +6,6 @@ import Swal from 'sweetalert2';
 
 const ElectionModelForm = () => {
 
-    const [view , setview] = useState({})
-
     const name = useRef();
     const registrationDate = useRef();
 
@@ -29,12 +27,6 @@ const ElectionModelForm = () => {
             timer: 1500
         });
     }
-
-    const handleInput = (e) => {
-        setview((view) => ({  ...view, [e.target.name]: e.target.value 
-}));
-    }
-
     return (
         <>
             <div className='py-6 border-b-2 border-solid border-gray-300  '>
@@ -72,7 +64,7 @@ const ElectionModelForm = () => {
                                                     placeholder='Enter Party Name'
                                                     autoComplete="given-name"
                                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                                    ref={name} onChange={handleInput}
+                                                    ref={name}
                                                 />
                                             </div>
                                         </div>
@@ -88,7 +80,7 @@ const ElectionModelForm = () => {
                                                     id="registrationDate"
                                                     autoComplete="registrationDate"
                                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                                    ref={registrationDate} onChange={handleInput}
+                                                    ref={registrationDate}
                                                 />
                                             </div>
                                         </div>
