@@ -21,6 +21,9 @@ const Header = () => {
                 Cookies.remove("Name");
                 Cookies.remove("_id");
                 Cookies.remove("Profile");
+                Cookies.remove("Email");
+                Cookies.remove("DOB");
+                Cookies.remove("Phone");
                 window.location = "/"
             }
         });

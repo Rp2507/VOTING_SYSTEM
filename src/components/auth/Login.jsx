@@ -25,6 +25,9 @@ const Login = () => {
                 Cookies.set("Name", res.data.data.Name)
                 Cookies.set("_id", res.data.data._id)
                 Cookies.set("Profile", res.data.data.Profile)
+                Cookies.set("Email", res.data.data.Email)
+                Cookies.set("Phone",res.data.data.Phone)
+                Cookies.set("DOB", res.data.data.DOB)
                 Swal.fire({
                     position: "top-center",
                     icon: "success",
