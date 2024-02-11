@@ -6,7 +6,6 @@ import Header from './Header'
 const LayoutUser = () => {
   return (
     <>
-
           <div className=''>
               <div className='flex flex-row bg-neutral-100 h-full w-screen overflow-hidden'>
                   <Sidebar />

@@ -8,7 +8,6 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { DELETE_PARTY_PROGRESS } from '../../../redux-saga/admin/Party/PartyAction';
 import Swal from 'sweetalert2';
 
-
 const Party = () => {
 
   const party = useSelector((state) => state.partyReducer);
@@ -44,14 +43,11 @@ const Party = () => {
       });
       dispatch({ type: DELETE_PARTY_PROGRESS, payload: val})
   }
-
-
   return (
     <>
 
       <div className="bg-white py-15 sm:py-10">
         <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-12 px-6 lg:px-8 xl:grid-cols-3">
-          {/* <Banner text='Welcome to Party...' /> */}
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Election Party Details</h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">

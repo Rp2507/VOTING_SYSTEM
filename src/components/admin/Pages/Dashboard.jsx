@@ -30,23 +30,6 @@ const Dashboard = () => {
                         </dl>
                     </div>
                 </div>
-
-                {/* <section className='mt-4'>
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <Card />
-                        </div>
-                        <div className="col-lg-6">
-                            <Card />
-                        </div>
-                        <div className="col-lg-6 mt-3">
-                            <Card />
-                        </div>
-                        <div className="col-lg-6 mt-3">
-                            <Card />
-                        </div>
-                    </div>
-                </section> */}
             </div>
         </>
     )

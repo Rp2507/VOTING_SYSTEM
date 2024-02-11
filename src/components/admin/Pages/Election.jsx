@@ -9,8 +9,6 @@ import ElectionModelForm from '../../common/ElectionModelForm';
 import Swal from 'sweetalert2';
 import { IoCloseSharp } from "react-icons/io5";
 
-// import { PaperClipIcon } from '@heroicons/react/20/solid'
-
 const Election = () => {
 
   const [view, setview] = useState({})
@@ -20,7 +18,7 @@ const Election = () => {
 
   useEffect(() => {
     dispatch({ type: GET_ELECTION_PROGRESS })
-  }, [])
+  }, []);
 
   console.log(election, 'election data');
 
@@ -52,32 +50,21 @@ const Election = () => {
   return (
     <>
       <div>
-        {/* <Banner text='Welcome to ELection...' /> */}
         <div>
           <div className="px-4 py-1 sm:px-0">
             <h3 className="text-2xl font-semibold leading-7 text-gray-900">Election Information</h3>
             <p className="mt-4 max-w-2xl text-md leading-6 text-gray-500">ElectionName and RegistrationDate.</p>
             <ElectionModelForm />
           </div>
-          {/* <div className='mt-6 border-t border-gray-100'> */}
           <div className="px-4 pt-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-bold leading-6 text-gray-900">ELECTION NAME</dt>
             <dd className="mt-1 text-sm font-bold leading-6 text-gray-900 sm:col-span-2 sm:mt-0">REGISTER DATE</dd>
-            {/* <dd className="mt-1 text-sm font-bold leading-6 text-gray-900 sm:col-span-2 sm:mt-0">CREATESAT</dd> */}
           </div>
           {
             election.data?.map((val, id, ind) => {
               return (
                 <>
                   <div >
-                    {/* <div className="px-4 sm:px-0">
-                    <h3 className="text-base font-semibold leading-7 text-gray-900">Applicant Information</h3>
-                    <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
-                  </div> */}
-                    {/* <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="text-sm font-medium leading-6 text-gray-900">ELECTION NAME</dt>
-                    <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">REGISTER DATE</dd>
-                  </div> */}
                     <div className="mt- border-t border-gray-200" key={val._id}>
                       <dl className="divide-y divide-gray-100">
                         <div className="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -95,10 +82,8 @@ const Election = () => {
               )
             })
           }
-          {/* </div> */}
         </div>
       </div>
-      {/* </div> */}
     </>
   )
 }

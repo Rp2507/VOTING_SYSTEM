@@ -1,5 +1,6 @@
 // ============= BASE API ROUTE ==============
-export const BASE_URL = "http://52.65.47.180:4000/v1";
+// export const BASE_URL = "http://52.65.47.180:4000/v1";
+export const BASE_URL = "https://voater-backend-app.onrender.com/v1";
 
 // ============== LOGIN ROUTE ================
 export const LOGIN_URL = "/login";
@@ -8,7 +9,7 @@ export const LOGIN_URL = "/login";
 export const GET_ELECTION_URL = "/elelist"
 export const POST_ELECTION_URL = "/ele"
 export const UPDATE_ELECTION_URL = "/eleup/"  //+ID
-export const DELETE_ELECTION_URL = "/eledel/"  //+id 
+export const DELETE_ELECTION_URL = "/eledel/"  //+id
 
 // ============== PARTY ROUTE ===============
 export const GET_PARTY_URL = "/pList"
@@ -25,4 +26,9 @@ export const UPDATE_USER_URL = "/authup/" //+_id
 // ============ PARTY CONNECTION ROUTE ================
 export const GET_PARTY_CONNECTION_URL = "/plistall"
 export const POST_PARTY_CONNECTION_URL = "/plist"
-export const DELETE_PARTY_CONNECTION_URL = "/plistdel/" //+_id
+export const DELETE_PARTY_CONNECTION_URL = "/plistdel/"
+
+// ============ VOTE ROUTE ===============
+export const GET_VOTE_URL = "/vlist"
+export const POST_VOTE_URL = "/vote"
+export const DELETE_VOTE_URL = "/vdel/" 

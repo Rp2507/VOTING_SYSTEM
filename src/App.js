@@ -9,9 +9,7 @@ import Party from './components/admin/Pages/Party';
 import PartyConnection from './components/admin/Pages/PartyConnection';
 import User from './components/admin/Pages/User';
 import Sidebar from './components/common/Sidebar';
-// import UserLayout from './components/user/Pages/UserLayout';
-// import UserLayout from './components/user/Pages/userLayout';
-import Home from './components/user/Pages/Home';
+// import Home from './components/user/Pages/Home';
 import Vote from './components/user/Pages/Vote';
 import UserProfile from './components/user/Pages/UserProfile';
 import LayoutUser from './components/user/Pages/LayoutUser';
@@ -47,7 +45,7 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={<LayoutUser/>}>
-            <Route index element={<Home/>} />
+            {/* <Route index element={<Home/>} /> */}
             <Route path='/vote' element={<Vote/>}  />
             <Route path='/userProfile' element={<UserProfile/>}  />
           </Route>
